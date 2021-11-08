@@ -175,7 +175,7 @@
       		<p>使用回應式設計可以讓我們製作的網頁隨著螢幕大小或是使用pc的不同(筆電, 手機,平板…)來轉換畫面的呈現.</p>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>如果想要改變排版,讓程式偵測到螢幕畫面寬度改變了,就可以讓所有的區塊因為寬度不足而往下掉,形成縱向的排版!</p>
 <p><img src="https://i.imgur.com/mt0u0ui.png"></p>
-<h2 id="運用技巧"><a href="#運用技巧" class="headerlink" title="運用技巧"></a>運用技巧</h2><h3 id="Css-Media-Query"><a href="#Css-Media-Query" class="headerlink" title="Css Media Query"></a>Css Media Query</h3><p>判斷使用者是否使用手機 </p>
+<h2 id="運用技巧"><a href="#運用技巧" class="headerlink" title="運用技巧"></a>運用技巧</h2><h3 id="Css-Media-Query"><a href="#Css-Media-Query" class="headerlink" title="Css Media Query"></a>Css Media Query</h3><p>針對裝置，做不同的樣式設定<br>判斷使用者是否使用手機 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@media screen <span class="function"><span class="title">and</span>(<span class="params">max-width:600px</span>)</span>&#123;</span><br><span class="line">    .content&#123;</span><br><span class="line">         <span class="attr">width</span>: <span class="number">100</span>%;</span><br><span class="line">         text-align: center;&#125;</span><br><span class="line">    .head&#123;</span><br><span class="line">         font-size: 24px;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="Meta-標籤"><a href="#Meta-標籤" class="headerlink" title="Meta 標籤"></a>Meta 標籤</h3><p>在head標籤底下加入meta標籤,為的是跟瀏覽器說不要任意改變畫面的大小,並且固定縮放的大小</p>

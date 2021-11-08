@@ -172,7 +172,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="Flex-box"><a href="#Flex-box" class="headerlink" title="Flex box"></a>Flex box</h1><p>讓排版更方便<br>before: display: inline block</p>
+      		<p>讓排版更方便<br>before: display: inline block</p>
 <p>利用Flex Box解決排版難題: </p>
 <ol>
 <li>水平對齊</li>
@@ -182,10 +182,10 @@
 <h2 id="問題1-並排"><a href="#問題1-並排" class="headerlink" title="問題1: 並排"></a>問題1: 並排</h2><p><strong>Solve:</strong></p>
 <ol>
 <li>item(粉色區塊)要設定flex:none, 代表粉色區塊不會隨著頁面的拉動改變大小</li>
-<li>容器(黃色區塊)要設定 display: flex,使得區塊並排<br>未設定前:<br><img src="https://i.imgur.com/TJuMFy8.png"></li>
+<li>容器(黃色區塊)要設定 display: flex,使得區塊並排<br>這兩個都要設定才會有結果!<br>未設定前:<br><img src="https://i.imgur.com/TJuMFy8.png"></li>
 </ol>
 <p>設定後:<br><img src="https://i.imgur.com/BE1sEmg.png"></p>
-<h2 id="問題2-水平對齊"><a href="#問題2-水平對齊" class="headerlink" title="問題2: 水平對齊"></a>問題2: 水平對齊</h2><p><strong>Solve:</strong><br>容器設定 justify-content: center;</p>
+<h2 id="問題2-水平對齊"><a href="#問題2-水平對齊" class="headerlink" title="問題2: 水平對齊"></a>問題2: 水平對齊</h2><p><strong>Solve:</strong><br>容器設定 justify-content: center;<br>代表讓容器內的東西處在畫面的中間</p>
 <h2 id="問題3-垂直對齊"><a href="#問題3-垂直對齊" class="headerlink" title="問題3: 垂直對齊"></a>問題3: 垂直對齊</h2><p>未設定前:</p>
 <p><img src="https://i.imgur.com/OxAXTXN.png"></p>
 <p><strong>Solve:</strong><br>容器裡設定 align-items: center(垂直方向置中)<br>預設值為stretch</p>
@@ -196,6 +196,10 @@
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2021/11/09/Flex%20Box%20&%20RWD/" style="float: left;">
+        ← FlexBox & RWD
+    </a>
     
     
     <a class="pull-right" href="/2021/10/25/rwd/">

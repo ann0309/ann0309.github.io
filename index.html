@@ -195,6 +195,47 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/2021/11/09/Flex Box & RWD/">FlexBox & RWD</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2021-11-08T16:00:00.000Z" itemprop="datePublished">
+          2021-11-09
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        RWD 回應式設計的關鍵動作:欄位變化
+RWD尺寸的規劃很重要
+Flex 如何控制欄位變化?
+
+因應不同的裝置的畫面大小作畫面的變化
+大於1200px : 4欄 固定尺寸  (電腦)
+500px~1200px: 2欄 彈性尺寸 (平板)
+&lt;500px 1欄 彈性尺寸 (手機)
+
+做畫面大小的變化使用Media query (之前RWD有講到)
+
+在畫面大小為1200px的時候把item寬度改為45%, 意即如果今天有兩個items
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2021/11/09/Flex Box & RWD/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/2021/11/02/flexbox/">Flex Box 排版</a></h3>
                     <span>
                         <span class="post-meta">
@@ -208,7 +249,7 @@
                 <div class="col-md-8">
                     <p>
                       
-                        Flex box讓排版更方便before: display: inline block
+                        讓排版更方便before: display: inline block
 利用Flex Box解決排版難題: 
 
 水平對齊
@@ -218,10 +259,10 @@
 問題1: 並排Solve:
 
 item(粉色區塊)要設定flex:none, 代表粉色區塊不會隨著頁面的拉動改變大小
-容器(黃色區塊)要設定 display: flex,使得區塊並排未設定前:
+容器(黃色區塊)要設定 display: flex,使得區塊並排這兩個都要設定才會有結果!未設定前:
 
 設定後:
-問題2: 水平對齊Solve:容器設定 justify-content
+問題2: 水平對齊Solve:容器設定 justify-co
                       
                     </p>
                     
@@ -254,8 +295,8 @@ item(粉色區塊)要設定flex:none, 代表粉色區塊不會隨著頁面的拉
                         使用回應式設計可以讓我們製作的網頁隨著螢幕大小或是使用pc的不同(筆電, 手機,平板…)來轉換畫面的呈現.
 概念如果想要改變排版,讓程式偵測到螢幕畫面寬度改變了,就可以讓所有的區塊因為寬度不足而往下掉,形成縱向的排版!
 
-運用技巧Css Media Query判斷使用者是否使用手機 
-1234567@media screen and(max-width:600px)&#123;    .content&#123;         wid
+運用技巧Css Media Query針對裝置，做不同的樣式設定判斷使用者是否使用手機 
+1234567@media screen and(max-width:600px)&#123;    .content&#123
                       
                     </p>
                     
