@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Flex Box 排版 | It&#39;s Ann</title>
+  <title>JavaScript &amp; Html DOM | It&#39;s Ann</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -161,47 +161,67 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2021-11-01T16:00:00.000Z" itemprop="datePublished">
-          2021-11-02
+      <time datetime="2021-12-01T16:00:00.000Z" itemprop="datePublished">
+          2021-12-02
       </time>
     
 </span>
-                <h1>Flex Box 排版</h1>
+                <h1>JavaScript & Html DOM</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>讓排版更方便<br>before: display: inline block</p>
-<p>利用Flex Box解決排版難題: </p>
-<ol>
-<li>水平對齊</li>
-<li>並排(切欄)</li>
-<li>垂直對齊</li>
-</ol>
-<h2 id="問題1-並排"><a href="#問題1-並排" class="headerlink" title="問題1: 並排"></a>問題1: 並排</h2><p><strong>Solve:</strong></p>
-<ol>
-<li>item(粉色區塊)要設定flex:none, 代表粉色區塊不會隨著頁面的拉動改變大小</li>
-<li>容器(黃色區塊)要設定 display: flex,使得區塊並排<br>這兩個都要設定才會有結果!<br>未設定前:<br><img src="https://i.imgur.com/TJuMFy8.png"></li>
-</ol>
-<p>設定後:<br><img src="https://i.imgur.com/BE1sEmg.png"></p>
-<h2 id="問題2-水平對齊"><a href="#問題2-水平對齊" class="headerlink" title="問題2: 水平對齊"></a>問題2: 水平對齊</h2><p><strong>Solve:</strong><br>容器設定 justify-content: center;<br>代表讓容器內的東西處在畫面的中間</p>
-<h2 id="問題3-垂直對齊"><a href="#問題3-垂直對齊" class="headerlink" title="問題3: 垂直對齊"></a>問題3: 垂直對齊</h2><p>未設定前:</p>
-<p><img src="https://i.imgur.com/OxAXTXN.png"></p>
-<p><strong>Solve:</strong><br>容器裡設定 align-items: center(垂直方向置中)<br>預設值為stretch</p>
-<p><img src="https://i.imgur.com/TgwqCkA.png"></p>
-<h3 id="flex屬性"><a href="#flex屬性" class="headerlink" title="flex屬性:"></a>flex屬性:</h3><p>auto:不用設定寬度, 會根據頁面寬度大小填滿頁面寬度<br>none:固定寬度, 沒辦法隨著頁面寬度縮放</p>
+      		<p><em>以下內容都在js.html</em></p>
+<h2 id="如何在html內加入javascript"><a href="#如何在html內加入javascript" class="headerlink" title="如何在html內加入javascript"></a>如何在html內加入javascript</h2><p>在head之下加入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="JavaScript-物件和建構式"><a href="#JavaScript-物件和建構式" class="headerlink" title="JavaScript 物件和建構式"></a>JavaScript 物件和建構式</h2><h3 id="建立空白物件"><a href="#建立空白物件" class="headerlink" title="建立空白物件"></a>建立空白物件</h3><p><strong>var</strong> point = <strong>new</strong> Object()</p>
+<h3 id="建立物件的成員"><a href="#建立物件的成員" class="headerlink" title="建立物件的成員"></a>建立物件的成員</h3><ul>
+<li>給值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">point.x=<span class="number">3</span> <span class="comment">//point這個物件中的成員x值給他3</span></span><br></pre></td></tr></table></figure></li>
+<li>建立物件的動作(方法)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">point.getPosition=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//function內為區域空間,function外為全域空間 </span></span><br><span class="line">    alert(<span class="built_in">this</span>.x+<span class="string">&quot;,&quot;</span>+<span class="built_in">this</span>.y)  <span class="comment">//this代表point</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>呼叫函式<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">point.getPosition();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li>把函式放進變數:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add=<span class="function"><span class="keyword">function</span>(<span class="params">n1,n2</span>)</span>&#123;</span><br><span class="line">    alert(n1+n2)</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">31</span>,<span class="number">15</span>)</span><br><span class="line"><span class="comment">//test=add  函式沒有呼叫就叫做函式本身</span></span><br></pre></td></tr></table></figure>
+讀取使用者的輸入:prompt(提示噢,預設值)<br>continue:強制進行下一次的迴圈。如果甚麼都不想讓程式做,只想讓他繼續,就可以放</li>
+</ul>
+<h2 id="Html-DOM結構"><a href="#Html-DOM結構" class="headerlink" title="Html DOM結構"></a>Html DOM結構</h2><p><img src="https://i.imgur.com/wbekoU9.png"><br>如果要取得body標籤:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.document.body</span><br></pre></td></tr></table></figure>
+<p>取得body中的html:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.document.body.innerHTML</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="事件處理1-按鈕觸發事件"><a href="#事件處理1-按鈕觸發事件" class="headerlink" title="事件處理1 -按鈕觸發事件"></a>事件處理1 -按鈕觸發事件</h3><ul>
+<li>onclick<br>可在任何一個標籤後加上onclick,””裡面放函式,代表他要觸動的動作<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        我在<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;work&quot;</span>&gt;</span>打工<span class="tag">&lt;/<span class="name">span</span>&gt;</span>!!!</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;change();&quot;</span>&gt;</span>Change<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>利用物件id(work)搜尋物件,並且建立一個物件把搜尋到的物件放到此物件中</p>
+<ul>
+<li>改變span標籤內容的樣式(內容,顏色,字型,是否顯示)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spanObj.innerHTML=<span class="string">&quot;自習&quot;</span></span><br><span class="line">spanObj.style.color=<span class="string">&quot;red&quot;</span>;</span><br><span class="line">spanObj.style.fontWeight=<span class="string">&quot;bold&quot;</span>;</span><br><span class="line">spanObj.style.display=<span class="string">&quot;none&quot;</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>span標籤的使用可以看之前的<strong>基礎css教學.html</strong></p>
+<h3 id="事件處理2-選單開合"><a href="#事件處理2-選單開合" class="headerlink" title="事件處理2 -選單開合"></a>事件處理2 -選單開合</h3><h4 id="點擊標題收合選單"><a href="#點擊標題收合選單" class="headerlink" title="點擊標題收合選單"></a>點擊標題收合選單</h4><ul>
+<li>方法1<br>切換標籤的hide設定<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">menu.classList.toggle(<span class="string">&quot;hide&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+<li>方法2(更優!!!)<br>如果現在是藏起來的狀態，就重新顯示(block)，如果是顯示的狀態就藏起來(none)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(menu.style.display==<span class="string">&quot;none&quot;</span>)&#123;  </span><br><span class="line">    menu.style.display=<span class="string">&quot;block&quot;</span>;  </span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    menu.style.display=<span class="string">&quot;none&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="利用參數區分表單"><a href="#利用參數區分表單" class="headerlink" title="利用參數區分表單"></a>利用參數區分表單</h4>需變更javascript 和html兩個部分</li>
+</ul>
+<p>在括號裡加入加入number這個參數</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggleMenu</span>(<span class="params">number</span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>在onclick裡的函式中給予參數，代表不同選單</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onclick=<span class="string">&quot;toggleMenu(1);&quot;</span>&gt;選單的標題 <span class="number">1</span>&lt;/div&gt;  </span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">onclick</span>=<span class="string">&quot;toggleMenu(2);&quot;</span>&gt;</span>選單的標題 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p><em>另外有提到class選擇器，可回顧css選擇器.html</em></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2021/11/09/Flex%20Box%20&%20RWD/" style="float: left;">
-        ← FlexBox & RWD
-    </a>
     
-    
-    <a class="pull-right" href="/2021/10/25/rwd/">
-        回應式設計(RWD) →
+    <a class="pull-right" href="/2021/11/20/%E5%A6%82%E4%BD%95%E6%8E%A8%E6%9D%B1%E8%A5%BF%E5%88%B0Github%E4%B8%8A/">
+        如何推東西到Github上? →
     </a>
     
 </nav>
