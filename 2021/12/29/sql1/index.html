@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2021/10 | It&#39;s Ann</title>
+  <title>UNION, JOIN, WHERE,ON(updating) | It&#39;s Ann</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -159,87 +159,99 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/moomin2.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>自律</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>成功與不成功的人的差別，其一在於有沒有訂定可行目標並且實踐</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/10/25/rwd/">回應式設計(RWD)</a></h4>
-                            
-                            <p><time datetime="2021-10-24T16:00:00.000Z"><a href="/2021/10/25/rwd/">2021-10-25</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/10/19/web_layout/">網頁排版教學</a></h4>
-                            
-                            <p><time datetime="2021-10-18T16:00:00.000Z"><a href="/2021/10/19/web_layout/">2021-10-19</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2021/10/16/css_table/">Css表格樣式</a></h4>
-                            
-                            <p><time datetime="2021-10-15T16:00:00.000Z"><a href="/2021/10/16/css_table/">2021-10-16</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2021-12-28T16:00:00.000Z" itemprop="datePublished">
+          2021-12-29
+      </time>
+    
+</span>
+                <h1>UNION, JOIN, WHERE,ON(updating)</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p><em>以下使用 BikeStores database</em></p>
+<p>production.products (共321筆)<br>| product_id | product_name | brand_id |brand_id|city|category_id|model_year|list_price<br>| ——– | ——– | ——– |——– |——– |——– |——– |——- |</p>
+<p>sales.stores(共3筆)<br>| store_id | store_name | phone |street|city|state|zip_code<br>| ——– | ——– | ——– |——– |——– |——– |——– |</p>
+<h1 id="join-和union的差別"><a href="#join-和union的差別" class="headerlink" title="join 和union的差別"></a>join 和union的差別</h1><h3 id="UNION"><a href="#UNION" class="headerlink" title="UNION"></a>UNION</h3><ul>
+<li>列出兩個資料表的全部的資料(資料不重複)</li>
+<li>UNION、INTERSECT 或 EXCEPT 兩個SELECT選項數量和其TYPE要一樣(欄位名字不用一樣)<h3 id="JOIN"><a href="#JOIN" class="headerlink" title="JOIN"></a>JOIN</h3>inner outer left right full<br>離散概念 接 join 格 lattice<h3 id="查詢結果"><a href="#查詢結果" class="headerlink" title="查詢結果"></a>查詢結果</h3></li>
+<li><em>SELECT product_id,product_name FROM production.products<br>union<br>SELECT store_id,store_name FROM sales.stores</em>*<br><img src="https://i.imgur.com/wuh8OFJ.png"></li>
+</ul>
+<p><strong>SELECT CONCAT(‘P’,product_id) AS ID,product_name FROM production.products<br>union<br>SELECT CONCAT(‘S’,store_id) AS ID,store_name FROM sales.stores</strong><br><img src="https://i.imgur.com/OR8gEE6.png"></p>
+<p><strong>CONCAT(A,B) AS C:</strong> 把A和B合併放一個新的欄位叫做ID</p>
+<h2 id="https-www-fooish-com-sql-union-html"><a href="#https-www-fooish-com-sql-union-html" class="headerlink" title="https://www.fooish.com/sql/union.html"></a><a target="_blank" rel="noopener" href="https://www.fooish.com/sql/union.html">https://www.fooish.com/sql/union.html</a></h2><h1 id="WHERE-ON"><a href="#WHERE-ON" class="headerlink" title="WHERE ON"></a>WHERE ON</h1><p>用WHERE和用ON有差嗎?<br>INNER JOIN 沒有差<br>OUTER JOIN有差<br><img src="https://i.imgur.com/IdZxUGc.png"></p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>Everyone's on their own trajectory. So I'm just taking care of what I can control. It's my own journey at the end of the day.</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2021/12/02/JavaScript/">
+        JavaScript & Html DOM →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
