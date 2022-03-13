@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-TW" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="佳恩恩" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      Arxan&amp;Android相關 
+      
+      
+      |
+    
+     It&#39;s Ann
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="icon" href="/images/logo.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/color-scheme.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<link rel="stylesheet" href="/css/comments.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/logo.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Ann</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Arxan&Android相關</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="更新時間"></i>
+          2022-03-13 00:00:00
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h6 id="tags-Arxan"><a href="#tags-Arxan" class="headerlink" title="tags: Arxan"></a>tags: <code>Arxan</code></h6><h2 id="Linux指令"><a href="#Linux指令" class="headerlink" title="Linux指令"></a>Linux指令</h2><p>檢視資料夾底下檔案<br><code>ls</code><br>顯示隱藏的檔案與目錄<br><code>ls -a</code><br>顯示檔案與目錄的詳細資訊<br><code>ls -l</code></p>
+<p>檔案權限<br>| 代號 | 動作 | 權限分數 |<br>| ——– | ——– | ——– |<br>| r     | 可讀(read)     | 4     |<br>| w     | 可寫(write)     | 2     |<br>| x    | 可執行(execute)     | 1     |<br>| -    |   沒有權限  | 0     |</p>
+<p>和權限相關的指令</p>
+<ul>
+<li>變更檔案權限<br>增加執行權限<br>  <code>chmod +x runA4A_3.1+.sh  </code> </li>
+</ul>
+<p>終止執行<br>control+c</p>
+<p><a target="_blank" rel="noopener" href="https://lab409.chem.ccu.edu.tw/~lightbreaker/intro%20of%20Linux.htm">https://lab409.chem.ccu.edu.tw/~lightbreaker/intro%20of%20Linux.htm</a></p>
+<p>顯示檔案上可用的空間<br><code>df</code><br><img src="https://i.imgur.com/L7hS94S.jpg"></p>
+<p>顯示所在資料夾下可用的空間<br><code>df .</code><br><img src="https://i.imgur.com/F9W29uv.jpg"></p>
+<h2 id="Shift-Left-test"><a href="#Shift-Left-test" class="headerlink" title="Shift Left test"></a>Shift Left test</h2><ul>
+<li>一般開發都是先開發完再做測試，但是這樣會造成錯誤不易找，而且無果開發延遲會壓縮到測試的時間</li>
+<li>Shift Lefting :希望測試的提早發生, 並且能夠能夠經常舉行</li>
+<li>有很多不同種Shift lefting，自己看~~</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://kojenchieh.pixnet.net/blog/post/452217659-shift-left-%E6%B8%AC%E8%A9%A6%3F-%E9%80%99%E6%98%AF%E4%BB%80%E9%BA%BC%E9%AC%BC%3F">https://kojenchieh.pixnet.net/blog/post/452217659-shift-left-%E6%B8%AC%E8%A9%A6%3F-%E9%80%99%E6%98%AF%E4%BB%80%E9%BA%BC%E9%AC%BC%3F</a></p>
+<h2 id="Process（進程、程序、處理序、行程）"><a href="#Process（進程、程序、處理序、行程）" class="headerlink" title="Process（進程、程序、處理序、行程）"></a>Process（進程、程序、處理序、行程）</h2><ul>
+<li>每個應用程式至少是一個process</li>
+<li>當primary thread執行結束後process就會結束</li>
+<li>對作業系統來說，它是資源分配的最小單位</li>
+<li>一個執行中的軟體或應用程式可以是一個或多個程序(process),一個process裡有多個thread等著被執行</li>
+<li>可分為<strong>同步</strong>或<strong>非同步</strong></li>
+<li>一個process會有一個unique的id叫做 <strong>process id</strong></li>
+<li>有兩個屬性：<strong>heap</strong> 和 <strong>stack</strong><br>heap 的內容可和其他process的thread的內容共享,stack則不行</li>
+</ul>
+<p> 一個編譯好的程式會由os來分配事情到個地方（process的 heap,stack, processID,program center)</p>
+<h2 id="Thread-（線程、執行緒）"><a href="#Thread-（線程、執行緒）" class="headerlink" title="Thread （線程、執行緒）"></a>Thread （線程、執行緒）</h2><p>在談thread之前要先了解process</p>
+<ul>
+<li>作業系統能夠進行運算排程的最小單位</li>
+<li>有自己的call stack,stack 可同步或不同步執行<br>JavaScript 和Ajax</li>
+</ul>
+<blockquote>
+<p>好想睡覺<br>每天早上都好想睡覺<br>[name=+NN]</p>
+</blockquote>
+<p>Q:每次改版都要調整Arxan設定嗎<br>基本上不用，根據實際情況會有不同<br>Q:使用Arxan後還可以trace code嗎?<br>可以!防護玩有提供mapping檔案<br>trace code:看檔案的結構或是檔案有哪些<br>Q: 執行Arxan防護只需要一行程式碼<br>Q: TA是馬上收集到被攻擊的資訊嗎?<br>no,10~15分。太快的話會被駭客攻擊</p>
+<h2 id="Debug-key-＆-Release-key"><a href="#Debug-key-＆-Release-key" class="headerlink" title="Debug key ＆ Release key"></a>Debug key ＆ Release key</h2><p><strong>debug key:</strong><br>使用android studio預設debug.keystore檔裡的預設簽名</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/publish/app-signing">https://developer.android.com/studio/publish/app-signing</a></p>
+<p>查詢簽名<br><code>keytool -list -v -keystore  debug.keystore檔路徑</code><br><img src="https://i.imgur.com/W9o7mjX.jpg"></p>
+<p><strong>release key</strong><br>自己設定的</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/devilmaycry812839668/p/8640182.html">https://www.cnblogs.com/devilmaycry812839668/p/8640182.html</a></p>
+<h2 id="Android-四大元件"><a href="#Android-四大元件" class="headerlink" title="Android 四大元件"></a>Android 四大元件</h2><p>==<strong>Activity,Service ,ContentProvider, BroadCastReceiver</strong>==</p>
+<p>Activity:</p>
+<ul>
+<li>基本上一個頁面就是一個activity</li>
+<li>利用intent來轉換activity並且傳遞資料</li>
+<li>每一個activity必須在AndroidManifest.xml中宣告，否則系統不會認識，也不會執行</li>
+</ul>
+<p>Service:<br>分成<strong>startService</strong>和<strong>bindService</strong></p>
+<p><a target="_blank" rel="noopener" href="https://givemepass.blogspot.com/2015/10/service.html">https://givemepass.blogspot.com/2015/10/service.html</a></p>
+<p>android 官方文件：<a target="_blank" rel="noopener" href="https://developer.android.com/reference">https://developer.android.com/reference</a><br>android 四大文件 <a target="_blank" rel="noopener" href="https://www.firbug.com/a/202110/1388164.html">https://www.firbug.com/a/202110/1388164.html</a><br>android面試相關 <a target="_blank" rel="noopener" href="https://iter01.com/17301.html">https://iter01.com/17301.html</a><br>android 開發教學：<a target="_blank" rel="noopener" href="http://tw.gitbook.net/android/android_services.html">http://tw.gitbook.net/android/android_services.html</a></p>
+<h2 id="Android-App-生命週期"><a href="#Android-App-生命週期" class="headerlink" title="Android App 生命週期"></a>Android App 生命週期</h2><p><img src="https://i.imgur.com/c8S0z5N.jpg"><br>Activity 啟動到結束這期間會做callback方法。Callback包括：</p>
+<ul>
+<li><strong>onCreate()</strong>:開啟應用程式時第一個執行，並只會執行一次</li>
+<li>**onStart()**：onCreate做完後就會做onStart。會把UI 物件初始化</li>
+<li><strong>onPause()</strong>:一個功能執行到一半暫時暫停，跑去做另一件事情,這個功能就會做onPause</li>
+<li>**onResume()**：onPause回來繼續執行時做onResume</li>
+<li><strong>onStop()</strong>:一個應用程式做完不用再做,就會做onStop把手機資源釋放[Ｍemory Management概念]</li>
+<li>**onDestroy()**：整個應用程式結束時做，和onCreate一樣只會做一次</li>
+</ul>
+<blockquote>
+<p>一件事情做完都會去做onPause和onStop<br>取消註冊沒有在用的事件也可以替電腦省電！<br>(<a target="_blank" rel="noopener" href="https://developer.android.com/topic/performance/memory-overview">https://developer.android.com/topic/performance/memory-overview</a>)</p>
+</blockquote>
+<blockquote>
+<p>oncreate和onstart差別</p>
+</blockquote>
+<p>:::warning<br>:question: 一個app可以不用onstop?<br>如果沒有中途跑去做另外一件事情的話，他就不會呼叫 </p>
+<p>中途呼叫另一個activity：<br>onPause(1) -&gt; onCreate(2) -&gt; onStart(2) - onResume(2) -&gt; onStop(1)<br>先暫停第一個，等第二個完成啟動時才stop<br>:::</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://litotom.com/ch5-4-activity-lifecycle/">https://litotom.com/ch5-4-activity-lifecycle/</a>   </li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10207640">https://ithelp.ithome.com.tw/articles/10207640</a></li>
+<li>這篇很棒！：<a target="_blank" rel="noopener" href="https://willy2016.pixnet.net/blog/post/71010205-android-activity-lifecycle-%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F%E8%88%87%E5%B0%8D%E6%87%89%E6%96%B9%E6%B3%95">https://willy2016.pixnet.net/blog/post/71010205-android-activity-lifecycle-%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F%E8%88%87%E5%B0%8D%E6%87%89%E6%96%B9%E6%B3%95</a><h2 id="Android-App-開發流程"><a href="#Android-App-開發流程" class="headerlink" title="Android App 開發流程"></a>Android App 開發流程</h2></li>
+</ul>
+<ol>
+<li>需求：包含市場調查、顧客反應、焦點訪談及使用者測試，針對結果訂定相對應主題。</li>
+<li>設計：所有的app相關設計（包含行銷部分）</li>
+<li>開發：工程師開始寫app</li>
+<li>測試:測試使用起來有沒有問題</li>
+<li>修正：使用者用起來有沒有不順暢或有錯,2～4階段重複運作</li>
+<li>行銷</li>
+</ol>
+<h2 id="Android-APP-簽署流程"><a href="#Android-APP-簽署流程" class="headerlink" title="Android APP 簽署流程"></a>Android APP 簽署流程</h2><ul>
+<li>上架到Google play的apk都需要有憑證，用這個憑證來驗證此apk是否為原本的作者發布的，而不是惡意的第三方人士</li>
+<li>要讓apk有憑證，需要一組app signing key，用這組key(private 或public）來做簽名(signing)</li>
+<li>用keystore這個檔案來保存金鑰<ul>
+<li>是個binary 檔</li>
+<li>有1~多組的signing key資訊</li>
+</ul>
+</li>
+</ul>
+<p>Google Play App Signing<br>第一次 signing：<br><img src="https://i.imgur.com/xLsl5mV.jpg"></p>
+<hr>
+<p>其餘次signing:<br><img src="https://i.imgur.com/Zx5ndjn.jpg"></p>
+<p>修改檔案的話需要原本的upload key(舊,keystore)+google給的app signing key（新給的）<br><a target="_blank" rel="noopener" href="https://shubo.io/react-native-android-publish/">https://shubo.io/react-native-android-publish/</a></p>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p>書單和學習路徑：<a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10200111">https://ithelp.ithome.com.tw/articles/10200111</a><br>method:</p>
+<ul>
+<li> static method內的程式碼只能呼叫static method</li>
+<li>一個函式屬於某一類別</li>
+<li>使用別人寫好的函式只要Import他的類別即可  class:類別<br>  package:套件,利用它來管理class</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">package arrange;</span><br><span class="line">public  class a&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>a這個類別會放在package之下</p>
+<ul>
+<li><p>reflection<br>java的技術。可以在程式runtime知道自己的長相並且自我修改或自我複製。未使用Reflection的程式碼，物件所需類別無法在執行時再決定，靈活度相對較低，但是使用reflction機制可破壞原有程式碼的封裝機制，它的動態讓程式碼不需寫死，能夠更彈性的執行程式。</p>
+</li>
+<li><p>stack trace<br>首先要知道stack是先進後出（）filo<br>查看堆疊追蹤可以呼叫例外物件的printStackTrace()在終端機顯示堆疊狀況<br><img src="https://i.imgur.com/B6f4gty.jpg"><br>例外狀況類別，最上層呼叫根源<br><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/Java/StackTrace.html">https://openhome.cc/Gossip/Java/StackTrace.html</a><br>使用堆疊追蹤 前提是try catch中catch捕捉例外後裡面一定做動作！（不做任何動作會嚴重影響維護）</p>
+</li>
+</ul>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/01/13/IIS/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>上一頁</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="更新時間"></i>
+              2022-03-13 00:00:00
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2022/03/13/Guard/" target="_self">
+                <span>下一頁</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">目錄</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-Arxan"><span class="toc-text">tags: Arxan</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E6%8C%87%E4%BB%A4"><span class="toc-text">Linux指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shift-Left-test"><span class="toc-text">Shift Left test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Process%EF%BC%88%E9%80%B2%E7%A8%8B%E3%80%81%E7%A8%8B%E5%BA%8F%E3%80%81%E8%99%95%E7%90%86%E5%BA%8F%E3%80%81%E8%A1%8C%E7%A8%8B%EF%BC%89"><span class="toc-text">Process（進程、程序、處理序、行程）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thread-%EF%BC%88%E7%B7%9A%E7%A8%8B%E3%80%81%E5%9F%B7%E8%A1%8C%E7%B7%92%EF%BC%89"><span class="toc-text">Thread （線程、執行緒）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Debug-key-%EF%BC%86-Release-key"><span class="toc-text">Debug key ＆ Release key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-%E5%9B%9B%E5%A4%A7%E5%85%83%E4%BB%B6"><span class="toc-text">Android 四大元件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-App-%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F"><span class="toc-text">Android App 生命週期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-App-%E9%96%8B%E7%99%BC%E6%B5%81%E7%A8%8B"><span class="toc-text">Android App 開發流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-APP-%E7%B0%BD%E7%BD%B2%E6%B5%81%E7%A8%8B"><span class="toc-text">Android APP 簽署流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java"><span class="toc-text">Java</span></a>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/ann0309?tab=repositories">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="email" href="">
+            <i class="iconfont icon-envelope"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Ann 2021</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜尋">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜尋，正在載入索引文件，請稍後...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>沒有找到内容，請嘗試更換檢索詞。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具體請參考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>請求失敗，嘗試重新刷新頁面或稍後重試。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://ann0309.github.io/2022/03/13/%E9%A1%8D%E5%A4%96/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
