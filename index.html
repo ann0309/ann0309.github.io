@@ -82,7 +82,7 @@
 				  	
 				    <li><a href="/categories/Coding/" class="animsition-link">Coding<small>(9)</small></a></li>
 				    
-				    <li><a href="/categories/Others/" class="animsition-link">Others<small>(1)</small></a></li>
+				    <li><a href="/categories/Others/" class="animsition-link">Others<small>(3)</small></a></li>
 				    
 				    <li><a href="/categories/SQL/" class="animsition-link">SQL<small>(1)</small></a></li>
 				    
@@ -197,6 +197,79 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/13/Guard/">Guard</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-12T16:00:00.000Z" itemprop="datePublished">
+          2022-03-13
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        Guard Specinfo
+在gs.dir裡，是個json檔
+blueprint的一部分
+決定Guard加的地方和保護範圍
+
+屬性global configuration:
+
+seed: 變異係數。相同的seed會產出類似的binary  同樣一個程式碼會因為不停更改而產生出不同的seed值
+建議將 Seed 值與 App 的 build number 綁定，確保：        *可靠的 build 重現
+        * 每個發
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/13/Guard/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/13/Arxan/">Arxan</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-12T16:00:00.000Z" itemprop="datePublished">
+          2022-03-13
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        tags: Arxan目的及特色用來保護app或網頁的資安。產品又分ios及Android
+
+阻止動態攻擊
+
+Arxan會去操作.dex(編譯好的程式，即混淆的程式碼和保護機制guard)來做動態guardAndroid App Protection 提供 Java 和 Kotlin 撰寫的 APP 靜態防護、動態防護以及混淆，以防止逆向工程(Reverse engineering)和篡改。利用一系列的Guard來做防護。當Guard檢
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/13/Arxan/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -495,77 +568,6 @@ item(粉色區塊)要設定flex:none, 代表粉色區塊不會隨著頁面的拉
                     
                     <p class="pull-right readMore">
                         <a href="/2021/11/02/flexbox/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2021/10/25/rwd/">回應式設計(RWD)</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-10-24T16:00:00.000Z" itemprop="datePublished">
-          2021-10-25
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        使用回應式設計可以讓我們製作的網頁隨著螢幕大小或是使用pc的不同(筆電, 手機,平板…)來轉換畫面的呈現.
-概念如果想要改變排版,讓程式偵測到螢幕畫面寬度改變了,就可以讓所有的區塊因為寬度不足而往下掉,形成縱向的排版!
-
-運用技巧Css Media Query針對裝置，做不同的樣式設定判斷使用者是否使用手機 
-1234567@media screen and(max-width:600px)&#123;    .content&#123
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2021/10/25/rwd/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2021/10/19/web_layout/">網頁排版教學</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2021-10-18T16:00:00.000Z" itemprop="datePublished">
-          2021-10-19
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        運用技巧
-css設定:
-如何將文字置中(text-align)
-如何並排區塊(display屬性)
-
-
-
-Text-align屬性: 文字置中1234567div&#123;        background-color: bisque;        color: cornflowerblue;        font-weight: bold;        font-size: 30px;        text-align: 
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2021/10/19/web_layout/">Read More...</a>
                     </p>
                     
                 </div>

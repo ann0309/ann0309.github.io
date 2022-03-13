@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Front End | It&#39;s Ann</title>
+  <title>Archives: 2022/3 | It&#39;s Ann</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -163,121 +163,78 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2021-09-23T16:00:00.000Z" itemprop="datePublished">
-          2021-09-24
-      </time>
-    
-</span>
-                <h1>Front End</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/moomin2.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>自律</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>成功與不成功的人的差別，其一在於有沒有訂定可行目標並且實踐</p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h2 id="Jquery介紹"><a href="#Jquery介紹" class="headerlink" title="Jquery介紹"></a>Jquery介紹</h2><ul>
-<li>以javacript為基礎的函式庫</li>
-<li>以DOM物件為核心(有包含左右標籤的就叫做DOM)</li>
-<li>讓我們利用Selector($)來方便的操作DOM物件</li>
-</ul>
-<h2 id="實際操作-按下按鈕觸發事件"><a href="#實際操作-按下按鈕觸發事件" class="headerlink" title="實際操作- 按下按鈕觸發事件"></a>實際操作- 按下按鈕觸發事件</h2><h3 id="三種選取物件的方法"><a href="#三種選取物件的方法" class="headerlink" title="三種選取物件的方法"></a>三種選取物件的方法</h3><p>譬如我想選取</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;demo-button&quot;</span>&gt;Reset&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>利用物件名稱</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(button)  </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>利用 class name</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(.demo-button) <span class="comment">//要加上 &quot;.&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>利用  id 名稱</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#btn_reset&quot;</span>)  <span class="comment">//要加上#</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">// 當整份文件都準備好的時候，執行function</span></span><br><span class="line">    alert(<span class="string">&quot; &quot;</span>);<span class="comment">//跳出訊息</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;.demo-button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//當按下button時執行以下事情</span></span><br><span class="line">    $(<span class="string">&quot;demo-input&quot;</span>).val(<span class="string">&quot;&quot;</span>);<span class="comment">//</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;demo-input&quot;</span>).on(<span class="string">&quot;input&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">&quot;demo-text&quot;</span>).text($(<span class="built_in">this</span>).val());<span class="comment">//this 代表最外圍包起來的整個DOM物件</span></span><br><span class="line">&#125;);<span class="comment">//on(): 把前面那一個物件和on括號裡的函式綁在一起</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="要注意"><a href="#要注意" class="headerlink" title="要注意"></a>要注意</h2><p>script標籤要放在<code>&lt;/body&gt; ;</code>  的前面。因為採深度搜尋，並且瀏覽器遇到<code>&lt;script&gt;</code>標籤會馬上執行，會影響到DOM tree</p>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
-    
-    <a class="pull-left" href="/2021/10/16/css_table/" style="float: left;">
-        ← Css表格樣式
-    </a>
-    
-    
-    <a class="pull-right" href="/2021/09/24/front_end_intro/">
-        Front End 基本常識 →
-    </a>
-    
-</nav>
-
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
-
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
-</script>
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2022/03/13/Guard/">Guard</a></h4>
+                            
+                            <p><time datetime="2022-03-12T16:00:00.000Z"><a href="/2022/03/13/Guard/">2022-03-13</a></time></p>
+                        </div>
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2022/03/13/Arxan/">Arxan</a></h4>
+                            
+                            <p><time datetime="2022-03-12T16:00:00.000Z"><a href="/2022/03/13/Arxan/">2022-03-13</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>Everyone's on their own trajectory. So I'm just taking care of what I can control. It's my own journey at the end of the day.</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 
