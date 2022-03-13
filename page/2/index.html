@@ -1,370 +1,478 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="zh-TW" color-mode="light">
+
+  <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="佳恩恩" />
+  <meta name="description" content="" />
   
-  <title>It&#39;s Ann</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="It&#39;s Ann">
-<meta property="og:url" content="http://ann0309.github.io/page/2/index.html">
-<meta property="og:site_name" content="It&#39;s Ann">
-<meta property="og:locale" content="zh_TW">
-<meta property="article:author" content="佳恩恩">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternative" href="/atom.xml" title="It&#39;s Ann" type="application/atom+xml">
+    <meta name="robots" content="noindex" />
   
   
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-<link rel="stylesheet" href="/css/style.css">
+  <title>
+    
+     It&#39;s Ann
+  </title>
 
   
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/color-scheme.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+<link rel="stylesheet" href="/css/comments.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
 
 <meta name="generator" content="Hexo 5.4.0"></head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-rwd" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/25/rwd/">回應式設計(RWD)</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2021/10/25/rwd/" class="article-date">
-  <time datetime="2021-10-24T16:00:00.000Z" itemprop="datePublished">2021-10-25</time>
-</a>
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
       
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
+        <img src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Oranges</a></div>
   </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
+  <div class="navbar">
+    <ul>
       
-        <p>使用回應式設計可以讓我們製作的網頁隨著螢幕大小或是使用pc的不同(筆電, 手機,平板…)來轉換畫面的呈現.</p>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>如果想要改變排版,讓程式偵測到螢幕畫面寬度改變了,就可以讓所有的區塊因為寬度不足而往下掉,形成縱向的排版!</p>
-<p><img src="https://i.imgur.com/mt0u0ui.png"></p>
-<h2 id="運用技巧"><a href="#運用技巧" class="headerlink" title="運用技巧"></a>運用技巧</h2><h3 id="Css-Media-Query"><a href="#Css-Media-Query" class="headerlink" title="Css Media Query"></a>Css Media Query</h3><p>針對裝置，做不同的樣式設定<br>判斷使用者是否使用手機 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@media screen <span class="function"><span class="title">and</span>(<span class="params">max-width:600px</span>)</span>&#123;</span><br><span class="line">    .content&#123;</span><br><span class="line">         <span class="attr">width</span>: <span class="number">100</span>%;</span><br><span class="line">         text-align: center;&#125;</span><br><span class="line">    .head&#123;</span><br><span class="line">         font-size: 24px;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Meta-標籤"><a href="#Meta-標籤" class="headerlink" title="Meta 標籤"></a>Meta 標籤</h3><p>在head標籤底下加入meta標籤,為的是跟瀏覽器說不要任意改變畫面的大小,並且固定縮放的大小</p>
-<p><img src="https://i.imgur.com/PuM6vke.png"></p>
-<h2 id="問題"><a href="#問題" class="headerlink" title="問題:"></a>問題:</h2><h2 id="為甚麼div-class設content後無法改變排版-拿掉content之後就可以"><a href="#為甚麼div-class設content後無法改變排版-拿掉content之後就可以" class="headerlink" title="為甚麼div class設content後無法改變排版?拿掉content之後就可以?"></a>為甚麼div class設content後無法改變排版?拿掉content之後就可以?</h2><p>不拿掉:<br><img src="https://i.imgur.com/48kiPTh.png"></p>
-<p><img src="https://i.imgur.com/JMfwc5x.png"></p>
-<p>拿掉:<br><img src="https://i.imgur.com/WH5BvLW.png"></p>
-<p><img src="https://i.imgur.com/5hh8bke.png"></p>
-
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
       
-
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
       
-        
-    </div>
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
   </div>
-  
-</article>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
 
 
 
-  
-    <article id="post-web_layout" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
+      <div class="flex-container">
+        <div class="container index">
+  <div class="post-list">
+    <!-- 遍历渲染文章 -->
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/19/web_layout/">網頁排版教學</a>
-    </h1>
-  
-
-      </header>
+      <div class="post-item" title="回應式設計(RWD)">
+        <div class="time-m-d">2021-10-25</div>
+        <div class="title">
+          <a href="/2021/10/25/rwd/">
+            
+              
+                <span>回應式設計(RWD)</span>
+              
+            
+          </a>
+        </div>
+      </div>
     
-    <div class="article-meta">
-      <a href="/2021/10/19/web_layout/" class="article-date">
-  <time datetime="2021-10-18T16:00:00.000Z" itemprop="datePublished">2021-10-19</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="運用技巧"><a href="#運用技巧" class="headerlink" title="運用技巧"></a>運用技巧</h2><ul>
-<li>css設定:<ul>
-<li>如何將文字置中(text-align)</li>
-<li>如何並排區塊(display屬性)</li>
-</ul>
-</li>
-</ul>
-<h4 id="Text-align屬性-文字置中"><a href="#Text-align屬性-文字置中" class="headerlink" title="Text-align屬性: 文字置中"></a>Text-align屬性: 文字置中</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">        background-color: bisque;</span><br><span class="line">        color: cornflowerblue;</span><br><span class="line">        font-weight: bold;</span><br><span class="line">        font-size: 30px;</span><br><span class="line">        text-align: center;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="display屬性-讓區塊並排"><a href="#display屬性-讓區塊並排" class="headerlink" title="display屬性: 讓區塊並排"></a>display屬性: 讓區塊並排</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">    <span class="attr">width</span>:250px;           </span><br><span class="line">    background-color: brown;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;content&quot;</span>&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="結果"><a href="#結果" class="headerlink" title="結果:"></a>結果:</h4><p><img src="https://i.imgur.com/ZxIJ5Qi.png"></p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-css_table" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
+      <div class="post-item" title="網頁排版教學">
+        <div class="time-m-d">2021-10-19</div>
+        <div class="title">
+          <a href="/2021/10/19/web_layout/">
+            
+              
+                <span>網頁排版教學</span>
+              
+            
+          </a>
+        </div>
+      </div>
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/16/css_table/">Css表格樣式</a>
-    </h1>
-  
-
-      </header>
+      <div class="post-item" title="Css表格樣式">
+        <div class="time-m-d">2021-10-16</div>
+        <div class="title">
+          <a href="/2021/10/16/css_table/">
+            
+              
+                <span>Css表格樣式</span>
+              
+            
+          </a>
+        </div>
+      </div>
     
-    <div class="article-meta">
-      <a href="/2021/10/16/css_table/" class="article-date">
-  <time datetime="2021-10-15T16:00:00.000Z" itemprop="datePublished">2021-10-16</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="利用CSS為表格做樣式的變換"><a href="#利用CSS為表格做樣式的變換" class="headerlink" title="利用CSS為表格做樣式的變換"></a>利用CSS為表格做樣式的變換</h2><h3 id="運用技巧"><a href="#運用技巧" class="headerlink" title="運用技巧"></a>運用技巧</h3><ul>
-<li><p>css標籤和虛擬選擇器互相搭配及使用</p>
-</li>
-<li><p>樣式屬性的功用</p>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">  &lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">meta</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS表格樣式<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"></span></span></span><br><span class="line"><span class="css"><span class="xml">   <span class="selector-tag">table</span>&#123;</span></span></span><br><span class="line"><span class="css"><span class="xml">        <span class="attribute">background-color</span>: wheat;</span></span></span><br><span class="line"><span class="css"><span class="xml">        <span class="attribute">width</span>: <span class="number">300px</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">        <span class="attribute">border-collapse</span>: collapse;      </span></span></span><br><span class="line"><span class="css"><span class="xml">   &#125;</span></span></span><br><span class="line"><span class="css"><span class="xml">   <span class="selector-tag">td</span>&#123;</span></span></span><br><span class="line"><span class="css"><span class="xml">       <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#888888</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">       <span class="attribute">padding</span>: <span class="number">5px</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml"></span></span></span><br><span class="line"><span class="css"><span class="xml">   &#125;</span></span></span><br><span class="line"><span class="css"><span class="xml">   </span></span></span><br><span class="line"><span class="css"><span class="xml">   <span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>)&#123;</span></span></span><br><span class="line"><span class="css"><span class="xml">        <span class="attribute">background-color</span>: coral;</span></span></span><br><span class="line"><span class="css"><span class="xml">   &#125;</span></span></span><br><span class="line"><span class="css"><span class="xml">   <span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child</span>(even)&#123;</span></span></span><br><span class="line"><span class="css"><span class="xml">        <span class="attribute">background-color</span>: rosybrown;</span></span></span><br><span class="line"><span class="css"><span class="xml">   &#125;</span></span></span><br><span class="line"><span class="css"><span class="xml">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span></span><br><span class="line"><span class="xml">    </span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">table</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>球隊<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>勝<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>敗<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>紐約洋基隊<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>10<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>8<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>波士頓紅襪隊<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>9<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>9<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>多倫多藍鳥隊<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>8<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>9<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span> </span><br></pre></td></tr></table></figure>
-<p><img src="https://i.imgur.com/jz4JIN1.png" alt="結果"></p>
-<h3 id="要注意"><a href="#要注意" class="headerlink" title="要注意"></a>要注意</h3><ul>
-<li><p>padding是在邊界內, 文字外</p>
-</li>
-<li><p>nth-child: 虛擬選擇器表格中的第n個tr標籤</p>
-</li>
-<li><p>border-collapse: collapse : 多條邊界合併成一條</p>
-</li>
-<li><p>tr:nth-child(even) : 表格中的偶數對tr</p>
-</li>
-</ul>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-front-end" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
+      <div class="post-item" title="Front End 基本常識">
+        <div class="time-m-d">2021-09-24</div>
+        <div class="title">
+          <a href="/2021/09/24/front_end_intro/">
+            
+              
+                <span>Front End 基本常識</span>
+              
+            
+          </a>
+        </div>
+      </div>
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/24/front-end/">Front End</a>
-    </h1>
-  
-
-      </header>
+      <div class="post-item" title="Front End">
+        <div class="time-m-d">2021-09-24</div>
+        <div class="title">
+          <a href="/2021/09/24/front-end/">
+            
+              
+                <span>Front End</span>
+              
+            
+          </a>
+        </div>
+      </div>
     
-    <div class="article-meta">
-      <a href="/2021/09/24/front-end/" class="article-date">
-  <time datetime="2021-09-23T16:00:00.000Z" itemprop="datePublished">2021-09-24</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
   </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Jquery介紹"><a href="#Jquery介紹" class="headerlink" title="Jquery介紹"></a>Jquery介紹</h2><ul>
-<li>以javacript為基礎的函式庫</li>
-<li>以DOM物件為核心(有包含左右標籤的就叫做DOM)</li>
-<li>讓我們利用Selector($)來方便的操作DOM物件</li>
-</ul>
-<h2 id="實際操作-按下按鈕觸發事件"><a href="#實際操作-按下按鈕觸發事件" class="headerlink" title="實際操作- 按下按鈕觸發事件"></a>實際操作- 按下按鈕觸發事件</h2><h3 id="三種選取物件的方法"><a href="#三種選取物件的方法" class="headerlink" title="三種選取物件的方法"></a>三種選取物件的方法</h3><p>譬如我想選取</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;demo-button&quot;</span>&gt;Reset&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>利用物件名稱</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(button)  </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>利用 class name</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(.demo-button) <span class="comment">//要加上 &quot;.&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>利用  id 名稱</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#btn_reset&quot;</span>)  <span class="comment">//要加上#</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">// 當整份文件都準備好的時候，執行function</span></span><br><span class="line">    alert(<span class="string">&quot; &quot;</span>);<span class="comment">//跳出訊息</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;.demo-button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//當按下button時執行以下事情</span></span><br><span class="line">    $(<span class="string">&quot;demo-input&quot;</span>).val(<span class="string">&quot;&quot;</span>);<span class="comment">//</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;demo-input&quot;</span>).on(<span class="string">&quot;input&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">&quot;demo-text&quot;</span>).text($(<span class="built_in">this</span>).val());<span class="comment">//this 代表最外圍包起來的整個DOM物件</span></span><br><span class="line">&#125;);<span class="comment">//on(): 把前面那一個物件和on括號裡的函式綁在一起</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="要注意"><a href="#要注意" class="headerlink" title="要注意"></a>要注意</h2><p>script標籤要放在<code>&lt;/body&gt; ;</code>  的前面。因為採深度搜尋，並且瀏覽器遇到<code>&lt;script&gt;</code>標籤會馬上執行，會影響到DOM tree</p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-front_end_intro" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
+  <nav class="post-navigation">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/24/front_end_intro/">Front End 基本常識</a>
-    </h1>
-  
-
-      </header>
+      <a href="/"><i class="iconfont icon-angleleft"></i></a>
     
-    <div class="article-meta">
-      <a href="/2021/09/24/front_end_intro/" class="article-date">
-  <time datetime="2021-09-23T16:00:00.000Z" itemprop="datePublished">2021-09-24</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Coding/">Coding</a>
-  </div>
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一些專有名詞"><a href="#一些專有名詞" class="headerlink" title="一些專有名詞"></a>一些專有名詞</h2><h3 id="UI-UX比較"><a href="#UI-UX比較" class="headerlink" title="UI/UX比較"></a>UI/UX比較</h3><p>UI: 使用者介面。外觀畫面好不好看<br>UX: 使用者用起來是否很順暢，不會用起來不方便，讓他不想用<br>HTTP/HTTPS                               (跟後端溝通的橋樑)<br>HTTP: hyper text  protocal<br>HTTPS: hyper text  protocal secure (透過加密的方式傳送資料，比較安全)</p>
-<h3 id="front-end"><a href="#front-end" class="headerlink" title="front end:"></a>front end:</h3><p>透過http協定把資料傳去後端，之後透過html jss css顯示出來<br>back end                         (伺服器端的應用服務)<br>從伺服器那裏接收http request(要求需求)之後,之後由伺服器傳給DB, DB回傳data, 之後透過controller將data 回傳給user,最後藉由前端顯示出來</p>
-<p>jquery</p>
-<p>javascript : event handle, selectors</p>
-<p>kendo</p>
-<h2 id="front-back-end-如何溝通"><a href="#front-back-end-如何溝通" class="headerlink" title="front back end 如何溝通?"></a>front back end 如何溝通?</h2><h2 id="常見的http-code-for-response-3個"><a href="#常見的http-code-for-response-3個" class="headerlink" title="常見的http code for response(3個)"></a>常見的http code for response(3個)</h2><p>successful: 2XX<br>client error: 4XX<br>server error: 5XX</p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
-  
-</section>
-        <aside id="sidebar">
-  <nav class="menus">
-  	<ul>
-  		<li><a href="/"><i class="icon icon-home"></i></a></li>
-  		
-			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
-  		
-  		
-			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
-  		
-  		
-  			<li><a href="https://github.com/hejianxian" target="_blank"><i class="icon icon-github"></i></a></li>
-  		
-  	</ul>
+    <span class="page-num">2 / 2</span>
+    
   </nav>
-  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
-</aside>
+</div>
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="email" href="">
+            <i class="iconfont icon-envelope"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="facebook" href="">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="wechat" href="">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="weibo" href="">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2021</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
 
       </div>
-      <footer id="footer">
-  
-	<div id="footer-info" class="inner">
-	  &copy; 2022 佳恩恩 
-	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-	  - Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
-	</div>
-</footer>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/tags" class="mobile-nav-link">Tag</a>
-  
-    <a target="_blank" rel="noopener" href="https://github.com/hejianxian" class="mobile-nav-link">Github</a>
-  
-</nav>
-    
-
-<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
 
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script src="/js/backtotop.js"></script>
 
 
 
-
-<script src="/js/script.js"></script>
-
-
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
   </div>
-</body>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="搜尋">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜尋，正在載入索引文件，請稍後...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>沒有找到内容，請嘗試更換檢索詞。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具體請參考：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>請求失敗，嘗試重新刷新頁面或稍後重試。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
 </html>
