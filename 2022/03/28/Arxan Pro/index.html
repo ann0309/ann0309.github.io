@@ -11,7 +11,7 @@
   
   <title>
     
-      Arxan 
+      Arxan Pro 
       
       
       |
@@ -125,159 +125,107 @@ MathJax = {
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">Arxan</div>
+      <div class="post-title">Arxan Pro</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime" title="更新時間"></i>
-          2022-03-13 00:00:00
+          2022-03-28 00:00:00
         </span>
         
       </div>
       <div class="markdown-body">
-        <h2 id="目的及特色"><a href="#目的及特色" class="headerlink" title="目的及特色"></a>目的及特色</h2><p>用來保護app或網頁的資安。產品又分ios及Android</p>
-<ul>
-<li><p>阻止動態攻擊</p>
-</li>
-<li><p>Arxan會去操作.dex(編譯好的程式，即混淆的程式碼和保護機制guard)來做動態guard<br>Android App Protection 提供 Java 和 Kotlin 撰寫的 APP 靜態防護、動態防護以及混淆，以防止逆向工程(Reverse engineering)和篡改。<br>利用一系列的Guard來做防護。當Guard檢測到攻擊時可以觸發自己定義好的反應機制。<del>或是修改程式碼讓攻擊者難以理解</del></p>
-</li>
-<li><p>靜態防護:</p>
-<ul>
-<li>防護前端</li>
-<li>隱蔽商業邏輯</li>
-<li>提高分析難度</li>
-</ul>
-</li>
-<li><p>動態防護:</p>
-<ul>
-<li>運行程式時可以偵測是否受到惡意攻擊並抵擋它</li>
-</ul>
-</li>
-<li><p>反制攻擊:</p>
-<ul>
-<li>可客製化作出相應對反映</li>
-</ul>
-</li>
-</ul>
-<h3 id="A4A-與-加殼"><a href="#A4A-與-加殼" class="headerlink" title="A4A 與 加殼"></a>A4A 與 加殼</h3><ul>
-<li>A4A<br>直接把程式碼的DEX檔抽出來進行混淆後再重新進行封裝(不可逆)</li>
-<li>加殼<br>在程式碼的外層新增一層保護殼，拆掉這個保護殼後還是可以看到原始沒動過的程式碼。(可逆)</li>
-</ul>
-<h2 id="保護流程"><a href="#保護流程" class="headerlink" title="保護流程"></a>保護流程</h2><p><img src="https://i.imgur.com/YaFnzFb.png"></p>
+        <h2 id="保護流程"><a href="#保護流程" class="headerlink" title="保護流程"></a>保護流程</h2><p><img src="https://i.imgur.com/QiGPQqN.jpg"></p>
 <ol>
-<li>從未防護的APK裡取出他的dex檔</li>
-<li>把這個DEX檔與 A4A 的 GuardSpec 和 Arxan library 一起進行 compile</li>
-<li>得到受到保護的dex檔</li>
+<li>從Digital.ai取得防護腳本</li>
+<li>安裝防護工具</li>
+<li>對app做防護</li>
+<li>對app做簽名</li>
+<li>將防護過的app部署到end user<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><h3 id="必備環境"><a href="#必備環境" class="headerlink" title="必備環境"></a>必備環境</h3></li>
 </ol>
-<p>原始程式碼+Arxan code(開發完後加)=收到完整防護的app<br><mark><strong>我們的任務就是去設計GuardSpec(JSON檔)來保護apk</strong></mark></p>
-<h2 id="A4A-Protection重要檔案"><a href="#A4A-Protection重要檔案" class="headerlink" title="A4A Protection重要檔案"></a>A4A Protection重要檔案</h2><p>:open_file_folder: <strong>gs_dir</strong>:放防護描述的檔案</p>
 <ul>
-<li>guardspec.json(防護文件)</li>
-<li>proguard-rules.properties (Proguard文件)</li>
+<li>Python<br>python版本需達到3</li>
+<li>開發工具<br>根據app選擇開發工具。<br>開發Android app: Android Studio 和 Android SDK<br>開發iOS app: Xcode<ul>
+<li>環境變數<br>下載完Android Studio後，需要將Android SDK的路徑加入環境變數<ul>
+<li>macOS及Linux<ol>
+<li>在.bash_profile 檔裡加入<br><code>export ANDROID_SDK_ROOT=/path/to/Library/Android/sdk/</code><br>修改/path/to/Library/Android/sdk/處，改你的Android SDK安裝路徑</li>
+<li>存檔</li>
+</ol>
+</li>
+<li>Windows<ol>
+<li>前往 控制台 &gt; 系統與安全性 &gt; 系統 &gt; 右側進階系統設定&gt;上方橫排選擇 系統 &gt; 環境變數</li>
+<li>在系統變數區塊點選編輯。如果沒有ANDROID_HOME這個變數，點選右側新增來建立系統變數<br>名稱:ANDROID_HOME (只能是這個名字)<br>路徑:Android SDK安裝路徑<br>EX: C:\Users\USER_NAME\AppData\Local\Android\sdk</li>
+<li>儲存</li>
+</ol>
+</li>
 </ul>
-<p>:open_file_folder:<strong>ori_dir</strong>: 未防護的APK檔案<br>:open_file_folder:<strong>out_dir</strong>:進行防護後產出的相關檔案</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="取得API-Credential"><a href="#取得API-Credential" class="headerlink" title="取得API Credential"></a>取得API Credential</h3><ol>
+<li><p>前往 <a target="_blank" rel="noopener" href="https://developer.arxan.com/Protect/Cloud/ProtectApp">digital.ai developer</a> 。右上角Manage&gt;&gt;選擇Web API Management</p>
+</li>
+<li><p>點選GENERATE NEW。在</p>
+</li>
+<li><p>Description處輸入credential名稱。Entitlements 選擇 Product download.</p>
+</li>
+<li><p>複製底下的Consumer key和Consumer Secret key。在安裝防護工具時會使用到。</p>
+<h3 id="取得license-token"><a href="#取得license-token" class="headerlink" title="取得license token"></a>取得license token</h3></li>
+<li><p>前往 <a target="_blank" rel="noopener" href="https://developer.arxan.com/Protect/Cloud/ProtectApp">digital.ai developer</a> ，Protect&gt;On Promise&gt;license token</p>
+</li>
+<li><p>點選右上方 GENERATE NEW TOKEN 產生token(保護及安裝工具時會用到)</p>
+<h3 id="下載防護腳本-protect-pro-py"><a href="#下載防護腳本-protect-pro-py" class="headerlink" title="下載防護腳本 protect-pro.py"></a>下載防護腳本 <a target="_blank" rel="noopener" href="https://developer.arxan.com/Protect/OnPremise/ProductDownload/1143/20">protect-pro.py</a></h3></li>
+<li><p>Product: 選擇App Production for mobile:Pro</p>
+</li>
+<li><p>Development Platform：選擇All Platform</p>
+</li>
+<li><p>下載protect-pro.py腳本<br><img src="https://i.imgur.com/BipzVBO.jpg"></p>
+</li>
+</ol>
+<blockquote>
+<p>protect-pro-samples.zip為範例apk</p>
+</blockquote>
+<h2 id="安裝工具"><a href="#安裝工具" class="headerlink" title="安裝工具"></a>安裝工具</h2><p>cd 至protect-pro.py 所在目錄下，執行以下指令來安裝防護工具：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">python3 protect-pro.py </span><br><span class="line">--input &lt;要被保護的apk路徑&gt; </span><br><span class="line">--license-ephemeral-token &lt;取得的license token string&gt; </span><br><span class="line">--api-key &lt;api credential的consumer key&gt; </span><br><span class="line">--api-secret &lt;STRING&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>python後面接版本號<br>ex:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 protect-pro.py --input /Users/Desktop/sample.apk --license-ephemeral-token b68d4f --api-key e126jif --api-secret lj56j8</span><br></pre></td></tr></table></figure>
+<p>安裝的工具會在 <code>USER\.arxan\Pro\</code> ，<mark>不能移動他!</mark></p>
+<h2 id="開始防護"><a href="#開始防護" class="headerlink" title="開始防護"></a>開始防護</h2><p>Arxan Pro利用執行Python腳本來防護特定的app檔案。在protect-pro.py所在目錄下，於終端機輸入以下指令來執行腳本:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python3 protect-pro.py </span><br><span class="line">--input &lt;要保護的apk路徑&gt; </span><br><span class="line">--license-ephemeral-token &lt;取得的token string&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>範例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 protect-pro.py --input /Users/wayne_yang/工作/AnnPractice/A4A_pro/samples/Android/sample-apk-co-signed.apk --license-ephemeral-token b68d4fd7-02ee-46fe-9cc2-9d43b6a8b67b</span><br></pre></td></tr></table></figure>
+<h2 id="防護結果"><a href="#防護結果" class="headerlink" title="防護結果"></a>防護結果</h2><p><img src="https://i.imgur.com/7mZFEwk.jpg"><br>防護完後會產生五個檔案:</p>
 <ul>
-<li>app-release-unaligned-unsigned-protected.apk ① 剛防護完的 apk (unsigned、unaligned)</li>
-<li>classes.dex</li>
+<li>blueprint.json</li>
 <li>DeobfuscationMap.json</li>
-<li>ProGuardDeobfuscationMap.txt  </li>
-</ul>
-<ol>
-<li>也叫ProGuardMappingFile.txt,在control flow flattening , Inlining,Renaming,Static Member Shuffling時會產生</li>
-<li>在 Guardspce 中的 globalConfiguration 設定可以 input 這個檔</li>
-</ol>
-<ul>
-<li>protection.log<br>  A4A 防護時的 CLI 訊息，防護出錯時可以看這裡</li>
-</ul>
-<p>:open_file_folder:<strong>signed_apk_dir</strong>:防護完成並且已經對apk簽章完畢，可以上架的APK</p>
-<p>:page_facing_up:<strong>runA4A.sh</strong> : 進行A4A防護時，使用的腳本</p>
-<p><a target="_blank" rel="noopener" href="https://isservice.atlassian.net/wiki/spaces/ARXAN/pages/1147142162/A4A+APK+Protection">https://isservice.atlassian.net/wiki/spaces/ARXAN/pages/1147142162/A4A+APK+Protection</a><br>:::warning<br>runA4A.sh裡的A4A_DIR為<strong>A4A Protection資料夾路徑</strong><br>A4A_DIR路徑是<strong>bin所在的資料夾路徑</strong>，用這個來保護包含guardspec.json的資料夾檔案。<br>guardspec決定Arxan要如何保護app<br>:::</p>
-<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p><mark>修改 :page_facing_up:<strong>runA4A.sh</strong></mark></p>
-<ul>
-<li>設定debug mode和reflection mode</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DEBUG_MODE=true</span><br><span class="line">REFLECTION_DEBUG=false </span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>包板時要確定reflection debug 是false</p>
-</blockquote>
-<ul>
-<li>關掉proguard<br>在App層的<strong>build.gradle</strong>裡面將<strong>minifyEnable</strong> 設為<strong>false</strong></li>
+<li>ProGuardMappingFile.txt</li>
+<li>.apk</li>
+<li>ThreatAnalysisGuardMap.json<h2 id="簽名"><a href="#簽名" class="headerlink" title="簽名"></a>簽名</h2><h2 id="安裝至手機"><a href="#安裝至手機" class="headerlink" title="安裝至手機"></a>安裝至手機</h2><code>adb install -r 要安裝的apk路徑   </code></li>
 </ul>
 <blockquote>
-<p>關掉proguard的原因是因為，Proguard可以做到的事情A4A 都可以辦到，所以我們只要將所有防護都交給Arxan來做就好了</p>
+<p>先前在手機上的apk要先解安裝</p>
 </blockquote>
-<p><mark>修改 :page_facing_up:<strong>guardspec.json</strong></mark></p>
-<p>裡面設定想放的guard。參考 <a href="%5B/0pbx0_T7RgGPl1vRLrEkfg%5D(https://ann0309.github.io/2022/03/13/Guard/)">Guard</a></p>
-<p>==Reflection Debugging==<br>詳情請洽 <a href="%5B/0pbx0_T7RgGPl1vRLrEkfg%5D(https://ann0309.github.io/2022/03/13/Guard/)">Reflection Debugging</a> ～<br>執行完後產生的keepSignature檔案可以再下一次包版時使用（要記得把reflection debugging關掉）</p>
-<h2 id="開始保護"><a href="#開始保護" class="headerlink" title="開始保護"></a>開始保護</h2><ul>
-<li>查檔案是否存在:</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd  資料夾路徑         //cd到資料夾而不是檔案</span><br><span class="line">ls                   //看目前的資料夾下有哪些檔案</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>執行防護腳本(保護apk的指令檔)來做開始防護</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd A4A_APKProtection資料夾路徑</span><br><span class="line">sh runA4A.sh 或 ./runA4Az_3.1+.sh    </span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><code>./</code>代表執行檔案,後面接檔案</p>
-</blockquote>
-<blockquote>
-<p>A4A的檔案都會在~/Library/Android/sdk下</p>
-</blockquote>
-<h2 id="簽名-Sign"><a href="#簽名-Sign" class="headerlink" title="簽名(Sign)"></a>簽名(Sign)</h2><p>::: info<br>允許signing APK 並確認 APK 的簽名在這些 APK 支持的所有 Android 平台版本上成功驗證,由Google提供的Android apk簽名及驗證工具<br>:::<br><strong>工具- apksigner</strong><br>在/Library/Android/sdk/build-tools/&lt;版本號&gt;</p>
-<p>v1簽名</p>
-<ul>
-<li>來自JDK jarsigner<br>v2簽名</li>
-<li>來自apksigner</li>
-<li>用於Android 7.0</li>
-<li>簽名更安全(不能修改压缩)</li>
-<li>签名验证时间更短(不需要解压验证),因此安装速度加快</li>
-</ul>
-<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p> apk 簽名<br><code>./apksigner sign --ks</code> “你的keystore”<br><code>-ks-key-alias</code> “金鑰別名”<br><code>--ks-pass pass</code>:”你的keystore密碼”<br><code>--key-pass pass</code>:”你的key密碼”<br><code>-out &quot;簽署後的apk位置&quot;</code> 簽署apk後檔案放的位置</p>
-<p> 範例:</p>
-<blockquote>
-<p>在防護腳本runA4A.sh裡</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~/Library/Android/sdk/build-tools/28.0.3/apksigner sign \</span><br><span class="line">--ks &quot;/Users/arxan/Desktop/ENGAGE.keystore&quot; \</span><br><span class="line">--ks-key-alias &quot;aztl&quot; \</span><br><span class="line">--ks-pass pass:&quot;aztl888&quot; \</span><br><span class="line">--key-pass pass:&quot;aztl888&quot; \</span><br><span class="line">--out &quot;/Users/arxan/Desktop/app-release-signed.apk&quot; &quot;/Users/arxan/Desktop/app-release.apk&quot;</span><br></pre></td></tr></table></figure>
-
-<p>try</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~/Library/Android/sdk/build-tools/28.0.3/apksigner sign --ks &quot;@@@&quot; </span><br><span class="line">--ks-key-alias &quot;@@@&quot; </span><br><span class="line">--ks-pass pass:&quot;@@@&quot; </span><br><span class="line">--key-pass pass:&quot;@@@&quot; </span><br><span class="line">--out &quot;@@@&quot; &quot;@@@&quot;</span><br></pre></td></tr></table></figure>
-
-<p>:::warning<br>如果已經用apksigner對apk做簽名,又再去修改apk的話,千張會變invalid(無效)因此在sign apk前需要用zipalign這個工具<br>:::</p>
-<p><code>apksigner verify [option] 防護完的apk</code></p>
-<p><img src="https://i.imgur.com/USD6AIX.jpg"><br>option<br><code>-v 或 -verbose</code> 顯示詳細訊息</p>
-<p>知識庫：<a target="_blank" rel="noopener" href="https://isservice.atlassian.net/wiki/spaces/ARXAN/pages/1596424809">https://isservice.atlassian.net/wiki/spaces/ARXAN/pages/1596424809</a></p>
-<p>v1~v3簽名：<br><a target="_blank" rel="noopener" href="https://doc.primekey.com/signserver/signserver-reference/signserver-workers/signserver-signers/apk-signer">https://doc.primekey.com/signserver/signserver-reference/signserver-workers/signserver-signers/apk-signer</a></p>
-<h2 id="logcat"><a href="#logcat" class="headerlink" title="logcat"></a>logcat</h2><p>看logcat:<br>在手機上run程式,logcat訊息會在android studio或終端機裡</p>
-<p>終端機顯示logcat訊息<br><code>adb logcat -s SECUREDEX</code></p>
-<p>包完防護後要把包好的apk(app)裝到手機上</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb devices             //顯示電腦連接的手機的一組數字</span><br><span class="line">adb install -r A4A Protection資料夾路徑     //安裝到手機上</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>要把手機之前裝的app刪掉</p>
-</blockquote>
-<h2 id="錯誤集"><a href="#錯誤集" class="headerlink" title="錯誤集"></a>錯誤集</h2><ul>
-<li>warning<br>warning不是錯，只是警告。在幫客戶包版的時候不能把protection.log打開</li>
-</ul>
-<p>這裡顯示做了debug info strip removed代表他移除了debug line<br><img src="https://i.imgur.com/RheZ3mL.jpg"></p>
-<ul>
-<li><p>Failed to print license as the current licence isn’t valid<br>Solve: <code>./secure-dex --license-setup</code>  重新申請一個license<br>token為申請license時他給的,帳號是arxan帳號</p>
-</li>
-<li><p>reflection debugger script 錯誤<br>python 改成規定的python版本，這裡改成python3<br><img src="https://i.imgur.com/D5hanW9.jpg"></p>
-</li>
-<li><p>磁碟空間不足： <a target="_blank" rel="noopener" href="https://www.it145.com/9/13102.html">https://www.it145.com/9/13102.html</a></p>
-</li>
-</ul>
+<h2 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h2><p>到app aware上看錯誤訊息<br>手機要連網路</p>
 <hr>
-<p>知識庫: <a target="_blank" rel="noopener" href="https://isservice.atlassian.net/wiki/spaces/ARXAN/overview?homepageId=6783102">https://isservice.atlassian.net/wiki/spaces/ARXAN/overview?homepageId=6783102</a></p>
+<h2 id="錯誤"><a href="#錯誤" class="headerlink" title="錯誤"></a>錯誤</h2><ul>
+<li>Error:Failed to reach the server<br><img src="https://i.imgur.com/wW36GYY.jpg"><br>有可能是key有錯或是路徑設錯</li>
+</ul>
+<blockquote>
+<p>出現zsh command not found 代表有些模組沒有安裝，用pip版本號來安裝<br>pip3 install….</p>
+</blockquote>
+<hr>
+<p>官方文件 <a target="_blank" rel="noopener" href="https://developer.arxan.com/doc/content/protect-pro/index.htm#t=Welcome.htm">https://developer.arxan.com/doc/content/protect-pro/index.htm#t=Welcome.htm</a></p>
 
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2022/03/13/Guard/" target="_self">
+              <a href="/2022/03/13/Arxan/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>上一頁</span>
               </a>
@@ -286,16 +234,11 @@ MathJax = {
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime" title="更新時間"></i>
-              2022-03-13 00:00:00
+              2022-03-28 00:00:00
             </span>
             
           </div>
           <div class="post-foot-prev">
-            
-              <a href="/2022/03/28/Arxan%20Pro/" target="_self">
-                <span>下一頁</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
             
           </div>
         </div>
@@ -308,7 +251,7 @@ MathJax = {
   <div class="post-catalog hidden" id="catalog">
     <div class="title">目錄</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84%E5%8F%8A%E7%89%B9%E8%89%B2"><span class="toc-text">目的及特色</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A4A-%E8%88%87-%E5%8A%A0%E6%AE%BC"><span class="toc-text">A4A 與 加殼</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E8%AD%B7%E6%B5%81%E7%A8%8B"><span class="toc-text">保護流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A4A-Protection%E9%87%8D%E8%A6%81%E6%AA%94%E6%A1%88"><span class="toc-text">A4A Protection重要檔案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD"><span class="toc-text">前置作業</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%96%8B%E5%A7%8B%E4%BF%9D%E8%AD%B7"><span class="toc-text">開始保護</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B0%BD%E5%90%8D-Sign"><span class="toc-text">簽名(Sign)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-text">指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#logcat"><span class="toc-text">logcat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%8C%AF%E8%AA%A4%E9%9B%86"><span class="toc-text">錯誤集</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E8%AD%B7%E6%B5%81%E7%A8%8B"><span class="toc-text">保護流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD"><span class="toc-text">前置作業</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%85%E5%82%99%E7%92%B0%E5%A2%83"><span class="toc-text">必備環境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%96%E5%BE%97API-Credential"><span class="toc-text">取得API Credential</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%96%E5%BE%97license-token"><span class="toc-text">取得license token</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BC%89%E9%98%B2%E8%AD%B7%E8%85%B3%E6%9C%AC-protect-pro-py"><span class="toc-text">下載防護腳本 protect-pro.py</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D%E5%B7%A5%E5%85%B7"><span class="toc-text">安裝工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%96%8B%E5%A7%8B%E9%98%B2%E8%AD%B7"><span class="toc-text">開始防護</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E8%AD%B7%E7%B5%90%E6%9E%9C"><span class="toc-text">防護結果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B0%BD%E5%90%8D"><span class="toc-text">簽名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D%E8%87%B3%E6%89%8B%E6%A9%9F"><span class="toc-text">安裝至手機</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Debug"><span class="toc-text">Debug</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%8C%AF%E8%AA%A4"><span class="toc-text">錯誤</span></a></li></ol>
     </div>
   </div>
 
@@ -602,7 +545,7 @@ MathJax = {
       <div class="share-content hidden">
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://ann0309.github.io/2022/03/13/Arxan/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://ann0309.github.io/2022/03/28/Arxan%20Pro/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
