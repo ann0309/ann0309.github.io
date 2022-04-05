@@ -134,7 +134,7 @@ MathJax = {
         
       </div>
       <div class="markdown-body">
-        <h2 id="Linux指令"><a href="#Linux指令" class="headerlink" title="Linux指令"></a>Linux指令</h2><p>檢視資料夾底下檔案<br><code>ls</code><br>顯示隱藏的檔案與目錄<br><code>ls -a</code><br>顯示檔案與目錄的詳細資訊<br><code>ls -l</code></p>
+        <h6 id="tags-學不完的知識"><a href="#tags-學不完的知識" class="headerlink" title="tags: 學不完的知識"></a>tags: <code>學不完的知識</code></h6><h1 id="阿哩阿咂的知識"><a href="#阿哩阿咂的知識" class="headerlink" title="阿哩阿咂的知識"></a>阿哩阿咂的知識</h1><h2 id="Linux指令"><a href="#Linux指令" class="headerlink" title="Linux指令"></a>Linux指令</h2><p>檢視資料夾底下檔案<br><code>ls</code><br>顯示隱藏的檔案與目錄<br><code>ls -a</code><br>顯示檔案與目錄的詳細資訊<br><code>ls -l</code></p>
 <p>檔案權限<br>| 代號 | 動作 | 權限分數 |<br>| ——– | ——– | ——– |<br>| r     | 可讀(read)     | 4     |<br>| w     | 可寫(write)     | 2     |<br>| x    | 可執行(execute)     | 1     |<br>| -    |   沒有權限  | 0     |</p>
 <p>和權限相關的指令</p>
 <ul>
@@ -150,40 +150,110 @@ MathJax = {
 <li>有很多不同種Shift lefting，自己看~~</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://kojenchieh.pixnet.net/blog/post/452217659-shift-left-%E6%B8%AC%E8%A9%A6%3F-%E9%80%99%E6%98%AF%E4%BB%80%E9%BA%BC%E9%AC%BC%3F">https://kojenchieh.pixnet.net/blog/post/452217659-shift-left-%E6%B8%AC%E8%A9%A6%3F-%E9%80%99%E6%98%AF%E4%BB%80%E9%BA%BC%E9%AC%BC%3F</a></p>
-<h2 id="Process（進程、程序、處理序、行程）"><a href="#Process（進程、程序、處理序、行程）" class="headerlink" title="Process（進程、程序、處理序、行程）"></a>Process（進程、程序、處理序、行程）</h2><ul>
-<li>每個應用程式至少是一個process</li>
+<h2 id="Process（進程、程序、處理序、行程）"><a href="#Process（進程、程序、處理序、行程）" class="headerlink" title="Process（進程、程序、處理序、行程）"></a>Process（進程、程序、處理序、行程）</h2><p><img src="https://i.imgur.com/6sN25WL.png"></p>
+<ul>
+<li>一個process或應用程式可以有多個執行緒</li>
 <li>當primary thread執行結束後process就會結束</li>
 <li>對作業系統來說，它是資源分配的最小單位</li>
-<li>一個執行中的軟體或應用程式可以是一個或多個程序(process),一個process裡有多個thread等著被執行</li>
+<li>把一個cpu分成多個單位,分給不同的process來做</li>
 <li>可分為<strong>同步</strong>或<strong>非同步</strong></li>
 <li>一個process會有一個unique的id叫做 <strong>process id</strong></li>
 <li>有兩個屬性：<strong>heap</strong> 和 <strong>stack</strong><br>heap 的內容可和其他process的thread的內容共享,stack則不行</li>
 </ul>
 <p> 一個編譯好的程式會由os來分配事情到個地方（process的 heap,stack, processID,program center)</p>
+<blockquote>
+<p>途中藍色小格子是thread</p>
+</blockquote>
 <h2 id="Thread-（線程、執行緒）"><a href="#Thread-（線程、執行緒）" class="headerlink" title="Thread （線程、執行緒）"></a>Thread （線程、執行緒）</h2><p>在談thread之前要先了解process</p>
 <ul>
 <li>作業系統能夠進行運算排程的最小單位</li>
 <li>有自己的call stack,stack 可同步或不同步執行<br>JavaScript 和Ajax</li>
 </ul>
-<blockquote>
-<p>好想睡覺<br>每天早上都好想睡覺<br>[name=+NN]</p>
-</blockquote>
-<p>Q:每次改版都要調整Arxan設定嗎<br>基本上不用，根據實際情況會有不同<br>Q:使用Arxan後還可以trace code嗎?<br>可以!防護玩有提供mapping檔案<br>trace code:看檔案的結構或是檔案有哪些<br>Q: 執行Arxan防護只需要一行程式碼<br>Q: TA是馬上收集到被攻擊的資訊嗎?<br>no,10~15分。太快的話會被駭客攻擊</p>
+<p>一個執行緒有四種狀態，且可以由開發人員決定不同的優先順序:</p>
+<ul>
+<li>執行中（Running）<ul>
+<li>執行緒正在執行當中。</li>
+</ul>
+</li>
+<li>暫停（Suspended）<ul>
+<li>暫停已在執行當中的執行緒，但可以讓它resume</li>
+</ul>
+</li>
+<li>被阻擋（Blocked）<ul>
+<li>執行緒因某個特定的資源被其他執行緒占用時，會進入等待的狀態。</li>
+</ul>
+</li>
+<li>終止（Terminated）<ul>
+<li>執行緒被終止或停止，但無法再繼續執行。</li>
+</ul>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://litotom.com/java-threading-basic/">https://litotom.com/java-threading-basic/</a></p>
 <h2 id="Debug-key-＆-Release-key"><a href="#Debug-key-＆-Release-key" class="headerlink" title="Debug key ＆ Release key"></a>Debug key ＆ Release key</h2><p><strong>debug key:</strong><br>使用android studio預設debug.keystore檔裡的預設簽名</p>
 <p><a target="_blank" rel="noopener" href="https://developer.android.com/studio/publish/app-signing">https://developer.android.com/studio/publish/app-signing</a></p>
 <p>查詢簽名<br><code>keytool -list -v -keystore  debug.keystore檔路徑</code><br><img src="https://i.imgur.com/W9o7mjX.jpg"></p>
 <p><strong>release key</strong><br>自己設定的</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/devilmaycry812839668/p/8640182.html">https://www.cnblogs.com/devilmaycry812839668/p/8640182.html</a></p>
-<h2 id="Android-四大元件"><a href="#Android-四大元件" class="headerlink" title="Android 四大元件"></a>Android 四大元件</h2><p>==<strong>Activity,Service ,ContentProvider, BroadCastReceiver</strong>==</p>
-<p>Activity:</p>
-<ul>
-<li>基本上一個頁面就是一個activity</li>
+<h2 id="Android-四大元件"><a href="#Android-四大元件" class="headerlink" title="Android 四大元件"></a>Android 四大元件</h2><p><mark><strong>Activity,Service ,ContentProvider, BroadCastReceiver</strong></mark></p>
+<h3 id="Activity"><a href="#Activity" class="headerlink" title="Activity:"></a>Activity:</h3><ul>
+<li>基本上一個畫面就是一個activity</li>
 <li>利用intent來轉換activity並且傳遞資料</li>
 <li>每一個activity必須在AndroidManifest.xml中宣告，否則系統不會認識，也不會執行</li>
 </ul>
-<p>Service:<br>分成<strong>startService</strong>和<strong>bindService</strong></p>
-<p><a target="_blank" rel="noopener" href="https://givemepass.blogspot.com/2015/10/service.html">https://givemepass.blogspot.com/2015/10/service.html</a></p>
+<h3 id="Service-kotlin"><a href="#Service-kotlin" class="headerlink" title="Service:(kotlin)"></a>Service:(kotlin)</h3><p>:::info<br>為甚麼要使用service:<br>在只剩下一個thread時為了避免process被系統回收導致thread提前結束<br>把元件的生命週期和thread的生命週期分開，避免前述 Thread 參考到元件，在 Thread 結束前無法釋放物件導致Memory leak<br>:::</p>
+<p>分成<strong>startService</strong>和<strong>bindService</strong><br>startService: onStart =&gt; onStart =&gt; onDestroy<br>bindService: onCreate =&gt; onBind=&gt; onRebind,onUnbind =&gt; onDestroy<br>左： startService 右：bindService<br><img src="https://i.imgur.com/217tzNB.jpg"></p>
+<blockquote>
+<p>memory leak?</p>
+</blockquote>
+<p>:::warning<br>android app和service生命週期比較<br>相同：onCreate,onDestroy,onStart<br>不同： onBind,onRebind,onUnbind<br>:::<br><a target="_blank" rel="noopener" href="https://xnfood.com.tw/android-service/">https://xnfood.com.tw/android-service/</a><br><a target="_blank" rel="noopener" href="https://givemepass.blogspot.com/2015/10/service.html">https://givemepass.blogspot.com/2015/10/service.html</a></p>
+<h3 id="BroadcastReceiver"><a href="#BroadcastReceiver" class="headerlink" title="BroadcastReceiver"></a>BroadcastReceiver</h3><ul>
+<li>用來接收或處理broadcast intents的類別（class）</li>
+<li><a target="_blank" rel="noopener" href="https://hackmd.io/WMG338brS_yeu6B8qrtkuQ?both">intentfilter</a>攔截Intent所描述的動作且和攔截的Intent做匹配，IntentFilter攔截的項目有actions, categories,data。</li>
+<li>和一些手機本身的事件有關，例如連網路、充電、重新開機，利用BroadCastReceiver來做出相對應的反應</li>
+<li>可以獨立運作也可以綁activity。例如綁broadCastReceiver在activity上，在執行時檢查是否有連到網路</li>
+</ul>
+<p>使用：</p>
+<ol>
+<li>建立一個名叫Receiver且類別繼承BroadCastReceiver的class</li>
+<li>在要註冊的activity裏宣告一個Receiver class的物件</li>
+<li>註冊廣播：<code>registerReceiver(reciever,filter)</code></li>
+<li>取消註冊：<code>unregisterReceiver(reciever)</code></li>
+</ol>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reciever</span> <span class="title">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> void Receiver()&#123;<span class="comment">// 建構子</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> void onReceive(Context context, Intent intent) &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="title">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line">    <span class="comment">//攔截訊息</span></span><br><span class="line">    <span class="keyword">private</span> static <span class="keyword">final</span> String FILTER_ACTION=<span class="string">&quot;broadcast&quot;</span>;</span><br><span class="line">    Reciever reciever=new Reciever();</span><br><span class="line">    Intent intent =new Intent(FILTER_ACTION);</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        <span class="comment">//建立IntentFilter物件</span></span><br><span class="line">        IntentFilter filter=new IntentFilter();</span><br><span class="line">        <span class="comment">//filter攔截訊息</span></span><br><span class="line">        filter.addAction(FILTER_ACTION);</span><br><span class="line">        <span class="comment">//      註冊廣播</span></span><br><span class="line">        registerReceiver(reciever,filter);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> void onResume() &#123;</span><br><span class="line">        <span class="keyword">super</span>.onResume();</span><br><span class="line">        <span class="comment">//   廣播</span></span><br><span class="line">        sendBroadcast(intent);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> void onPause() &#123;</span><br><span class="line">        <span class="keyword">super</span>.onPause();</span><br><span class="line">        <span class="comment">//      取消註冊廣播</span></span><br><span class="line">        unregisterReceiver(reciever);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="ContentProvider"><a href="#ContentProvider" class="headerlink" title="ContentProvider"></a>ContentProvider</h3><p>利用uri對資料庫進行crud</p>
+<ul>
+<li>利用ContentResol統一管理操作不同的ContentProviderder(因為一台手機不只有一個Provider)</li>
+<li>在manifest.xml中可以設定其他應用程式是否可以存取我的應用程式的資料(權限)</li>
+</ul>
+<p><img src="https://i.imgur.com/3P16FuW.png"><br>authority:用此識別不同的ContentProvider<br>path:table 名稱</p>
+<p><a target="_blank" rel="noopener" href="http://hulkyang.blogspot.com/2019/01/android-contentprovider.html">http://hulkyang.blogspot.com/2019/01/android-contentprovider.html</a></p>
 <p>android 官方文件：<a target="_blank" rel="noopener" href="https://developer.android.com/reference">https://developer.android.com/reference</a><br>android 四大文件 <a target="_blank" rel="noopener" href="https://www.firbug.com/a/202110/1388164.html">https://www.firbug.com/a/202110/1388164.html</a><br>android面試相關 <a target="_blank" rel="noopener" href="https://iter01.com/17301.html">https://iter01.com/17301.html</a><br>android 開發教學：<a target="_blank" rel="noopener" href="http://tw.gitbook.net/android/android_services.html">http://tw.gitbook.net/android/android_services.html</a></p>
+<h2 id="Android-App-結構"><a href="#Android-App-結構" class="headerlink" title="Android App 結構"></a>Android App 結構</h2><p>分為三部分:</p>
+<ol>
+<li>AndroidManifest.xml: app的設定檔<br> <code>package=&quot;com.snatik.matches&quot;</code>: 整個app的名字，和程式碼結構有關<br><code>android:name=&quot;.MainActivity&quot;</code>：app的主要activity</li>
+<li>程式碼</li>
+<li>resource</li>
+</ol>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="line">&lt;manifest xmlns:android=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="line">    <span class="keyword">package</span>=<span class="string">&quot;com.snatik.matches&quot;</span> &gt;</span><br><span class="line"></span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.INTERNET&quot;</span>/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;application</span><br><span class="line">        android:name=<span class="string">&quot;.GameApplication&quot;</span></span><br><span class="line">        android:allowBackup=<span class="string">&quot;true&quot;</span></span><br><span class="line">        android:icon=<span class="string">&quot;@drawable/icon&quot;</span></span><br><span class="line">        android:label=<span class="string">&quot;@string/app_name&quot;</span></span><br><span class="line">        android:theme=<span class="string">&quot;@style/AppTheme&quot;</span> &gt;</span><br><span class="line">        &lt;activity</span><br><span class="line">            android:name=<span class="string">&quot;.MainActivity&quot;</span></span><br><span class="line">            android:label=<span class="string">&quot;@string/app_name&quot;</span></span><br><span class="line">            android:screenOrientation=<span class="string">&quot;landscape&quot;</span> &gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action android:name=<span class="string">&quot;android.intent.action.MAIN&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line">                &lt;category android:name=<span class="string">&quot;android.intent.category.LAUNCHER&quot;</span> /&gt;</span><br><span class="line">            &lt;/intent-filter&gt;</span><br><span class="line">        &lt;/activity&gt;&lt;!-- activity要定義才可以用 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/application&gt;</span><br><span class="line"></span><br><span class="line">&lt;/manifest&gt;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="拆解apk"><a href="#拆解apk" class="headerlink" title="拆解apk"></a>拆解apk</h2><p>apk其實就是個壓縮檔，解壓縮後會有很多個檔案<br>解壓縮指令：<code>unzip apk名稱.apk -d apk名稱</code></p>
+<p>解壓縮之後會有一些資料夾及檔案</p>
+<ul>
+<li>lib - 拿來放 native 程式碼用的</li>
+<li>META-INF - 會有一些簽章相關資訊</li>
+<li>res - 剛剛寫 app 的時候有看到了</li>
+<li>AndroidManifest.xml </li>
+<li>classes.dex - 編譯成 dex 後的結果</li>
+<li>resources.arsc - resource 相關的索引表（已被編譯過）</li>
+</ul>
+<p>為了要讓人看得懂這些編譯過後的檔案，我們必須用<mark>apktool</mark>來幫忙轉換這些編譯過的檔案</p>
+<p>把拆解的apk利用apktool重新打包（組）回去(要先cd到所在apk<br>目錄下)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apktool b demoapp -o demoapp2.apk</span><br></pre></td></tr></table></figure>
+<p>apk打包之後要還要經過align和sign兩道手續才能裝到手機上<br>:::warning<br>align 是為了效能上的考量，而 sign 則是為了安全性。<br>:::<br>逆向app(讚): <a target="_blank" rel="noopener" href="https://tech-blog.cymetrics.io/posts/huli/android-apk-decompile-intro-1/">https://tech-blog.cymetrics.io/posts/huli/android-apk-decompile-intro-1/</a></p>
 <h2 id="Android-App-生命週期"><a href="#Android-App-生命週期" class="headerlink" title="Android App 生命週期"></a>Android App 生命週期</h2><p><img src="https://i.imgur.com/c8S0z5N.jpg"><br>Activity 啟動到結束這期間會做callback方法。Callback包括：</p>
 <ul>
 <li><strong>onCreate()</strong>:開啟應用程式時第一個執行，並只會執行一次</li>
@@ -227,6 +297,7 @@ MathJax = {
 <hr>
 <p>其餘次signing:<br><img src="https://i.imgur.com/Zx5ndjn.jpg"></p>
 <p>修改檔案的話需要原本的upload key(舊,keystore)+google給的app signing key（新給的）<br><a target="_blank" rel="noopener" href="https://shubo.io/react-native-android-publish/">https://shubo.io/react-native-android-publish/</a></p>
+<h2 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h2><p><img src="https://i.imgur.com/C6j4O0b.jpg"><br>的確:cry:</p>
 <h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p>書單和學習路徑：<a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10200111">https://ithelp.ithome.com.tw/articles/10200111</a><br>method:</p>
 <ul>
 <li> static method內的程式碼只能呼叫static method</li>
@@ -239,6 +310,61 @@ MathJax = {
 <li><p>reflection<br>java的技術。可以在程式runtime知道自己的長相並且自我修改或自我複製。未使用Reflection的程式碼，物件所需類別無法在執行時再決定，靈活度相對較低，但是使用reflction機制可破壞原有程式碼的封裝機制，它的動態讓程式碼不需寫死，能夠更彈性的執行程式。</p>
 </li>
 <li><p>stack trace<br>首先要知道stack是先進後出（）filo<br>查看堆疊追蹤可以呼叫例外物件的printStackTrace()在終端機顯示堆疊狀況<br><img src="https://i.imgur.com/B6f4gty.jpg"><br>例外狀況類別，最上層呼叫根源<br><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/Java/StackTrace.html">https://openhome.cc/Gossip/Java/StackTrace.html</a><br>使用堆疊追蹤 前提是try catch中catch捕捉例外後裡面一定做動作！（不做任何動作會嚴重影響維護）</p>
+</li>
+<li><p>繼承<br><code>public class son extends father</code>//繼承father類別的son,代表son有father的屬性</p>
+<ul>
+<li><p>只能單向繼承，代表一個子類別只能有一個父類別(C++可以雙向繼承，代表一個子類別可以有都個父類別)</p>
+</li>
+<li><p>Java是純物件導向的程式語言，而每個類別，包括自訂的類別，都繼承Object</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>下面兩者一樣。如果沒有加extend，Java會自動幫你extends Object</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="comment">// code</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> <span class="keyword">extends</span> <span class="title">Object</span></span>&#123;</span><br><span class="line">    <span class="comment">// code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>泛型 generic<br><a target="_blank" rel="noopener" href="https://gradyzhuo.gitbooks.io/meetswifttutorial/content/Episode_1/Chapter_3.html">https://gradyzhuo.gitbooks.io/meetswifttutorial/content/Episode_1/Chapter_3.html</a><br>先不用決定傳入的型別是甚麼，就可以完成method或class的設計</li>
+</ul>
+<blockquote>
+<p>想像他是一隻貓，把所有東西裝到他身上他都會變那個東西的形狀<br>:::info<br>為甚麼要用泛型?</p>
+</blockquote>
+<ul>
+<li>在編譯時會有更強的型別檢查</li>
+<li>可以實現更通用的演算法</li>
+<li>消除型別轉換<br>:::</li>
+</ul>
+<ul>
+<li>array &amp; arraylist差別</li>
+</ul>
+<p>array 大小固定，array list大小變動。新增元素的方法也不同</p>
+<p>宣告</p>
+<p>array</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>]</span><br></pre></td></tr></table></figure>
+<p>arraylist</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList arrL = <span class="keyword">new</span> ArrayList();</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10229699">https://ithelp.ithome.com.tw/articles/10229699</a></p>
+<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><p>是高階語言</p>
+<ul>
+<li><p><code>::</code>用法意思：</p>
+</li>
+<li><p>宣告和定義</p>
+<ul>
+<li>宣告<br>只跟程式說有這個東西，但沒有配給他空間<br>把變數介紹給C++，讓他知道資料型態是什麼，並且給他一個型態所需要的大小的記憶體<br>ex:<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i</span><br></pre></td></tr></table></figure></li>
+<li>定義<br>把變數值存進記憶體<br>ex:</li>
+</ul>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>  <a target="_blank" rel="noopener" href="https://mitblog.pixnet.net/blog/post/40951279-%E4%BD%95%E8%AC%82%E5%AE%A3%E5%91%8A%28declaration%29%E8%88%87%E5%AE%9A%E7%BE%A9%28definition%29%EF%BC%9F">https://mitblog.pixnet.net/blog/post/40951279-%E4%BD%95%E8%AC%82%E5%AE%A3%E5%91%8A%28declaration%29%E8%88%87%E5%AE%9A%E7%BE%A9%28definition%29%EF%BC%9F</a></p>
+<blockquote>
+<p>變數不能只有宣告，而沒有定義，會發生 linking error。且只能定義一次。<br>外部變量 extern</p>
+</blockquote>
+</li>
+<li><p>struct用法意思：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct MyStruct &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li><p>vector和dynamic array比較<br><a target="_blank" rel="noopener" href="https://www.itread01.com/content/1546920554.html">https://www.itread01.com/content/1546920554.html</a></p>
+</li>
+<li><p>function pointer<br><a target="_blank" rel="noopener" href="https://shengyu7697.github.io/std-function/">https://shengyu7697.github.io/std-function/</a></p>
 </li>
 </ul>
 
@@ -278,7 +404,7 @@ MathJax = {
   <div class="post-catalog hidden" id="catalog">
     <div class="title">目錄</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E6%8C%87%E4%BB%A4"><span class="toc-text">Linux指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shift-Left-test"><span class="toc-text">Shift Left test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Process%EF%BC%88%E9%80%B2%E7%A8%8B%E3%80%81%E7%A8%8B%E5%BA%8F%E3%80%81%E8%99%95%E7%90%86%E5%BA%8F%E3%80%81%E8%A1%8C%E7%A8%8B%EF%BC%89"><span class="toc-text">Process（進程、程序、處理序、行程）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thread-%EF%BC%88%E7%B7%9A%E7%A8%8B%E3%80%81%E5%9F%B7%E8%A1%8C%E7%B7%92%EF%BC%89"><span class="toc-text">Thread （線程、執行緒）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Debug-key-%EF%BC%86-Release-key"><span class="toc-text">Debug key ＆ Release key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-%E5%9B%9B%E5%A4%A7%E5%85%83%E4%BB%B6"><span class="toc-text">Android 四大元件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-App-%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F"><span class="toc-text">Android App 生命週期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-App-%E9%96%8B%E7%99%BC%E6%B5%81%E7%A8%8B"><span class="toc-text">Android App 開發流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-APP-%E7%B0%BD%E7%BD%B2%E6%B5%81%E7%A8%8B"><span class="toc-text">Android APP 簽署流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java"><span class="toc-text">Java</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-%E5%AD%B8%E4%B8%8D%E5%AE%8C%E7%9A%84%E7%9F%A5%E8%AD%98"><span class="toc-text">tags: 學不完的知識</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%BF%E5%93%A9%E9%98%BF%E5%92%82%E7%9A%84%E7%9F%A5%E8%AD%98"><span class="toc-text">阿哩阿咂的知識</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E6%8C%87%E4%BB%A4"><span class="toc-text">Linux指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shift-Left-test"><span class="toc-text">Shift Left test</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Process%EF%BC%88%E9%80%B2%E7%A8%8B%E3%80%81%E7%A8%8B%E5%BA%8F%E3%80%81%E8%99%95%E7%90%86%E5%BA%8F%E3%80%81%E8%A1%8C%E7%A8%8B%EF%BC%89"><span class="toc-text">Process（進程、程序、處理序、行程）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thread-%EF%BC%88%E7%B7%9A%E7%A8%8B%E3%80%81%E5%9F%B7%E8%A1%8C%E7%B7%92%EF%BC%89"><span class="toc-text">Thread （線程、執行緒）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Debug-key-%EF%BC%86-Release-key"><span class="toc-text">Debug key ＆ Release key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-%E5%9B%9B%E5%A4%A7%E5%85%83%E4%BB%B6"><span class="toc-text">Android 四大元件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Activity"><span class="toc-text">Activity:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Service-kotlin"><span class="toc-text">Service:(kotlin)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BroadcastReceiver"><span class="toc-text">BroadcastReceiver</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ContentProvider"><span class="toc-text">ContentProvider</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-App-%E7%B5%90%E6%A7%8B"><span class="toc-text">Android App 結構</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%86%E8%A7%A3apk"><span class="toc-text">拆解apk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-App-%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F"><span class="toc-text">Android App 生命週期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-App-%E9%96%8B%E7%99%BC%E6%B5%81%E7%A8%8B"><span class="toc-text">Android App 開發流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-APP-%E7%B0%BD%E7%BD%B2%E6%B5%81%E7%A8%8B"><span class="toc-text">Android APP 簽署流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CocoaPods"><span class="toc-text">CocoaPods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java"><span class="toc-text">Java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a>
     </div>
   </div>
 
